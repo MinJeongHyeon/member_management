@@ -33,14 +33,4 @@ public void setAge(String age) {
 }
 
 
-private static void deleteGrade() {
-   
-
-      Scanner s = new Scanner(System.in);
-      String id = s.nextLine().trim();
-      
-      System.out.println(id + "을 삭제합니다.");
-      map.remove(id);
-
-   }
 }
