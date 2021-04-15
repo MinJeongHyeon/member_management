@@ -60,13 +60,24 @@ public class Main {
 		System.out.println("프로그램을 종료합니다.");
 		System.exit(0);
 	}
-private static void inquiryGrade() {
-   
-      Set<Map.Entry<String, Member>> set = map.entrySet();
 
-      for(Map.Entry<String, Member> me : set) {
-         System.out.println(me.getKey() + " : " + me.getValue().getName());
-      }
+	private static void deleteGrade() {
+   
+
+	      Scanner s = new Scanner(System.in);
+	      String id = s.nextLine().trim();
+      
+	      System.out.println(id + "을 삭제합니다.");
+	      map.remove(id);
+
+	private static void inquiryGrade() {
+   
+      		Set<Map.Entry<String, Member>> set = map.entrySet();
+
+     		 for(Map.Entry<String, Member> me : set) {
+       		  System.out.println(me.getKey() + " : " + me.getValue().getName());
+     		 }
+
 
    }
 }
