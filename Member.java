@@ -1,36 +1,14 @@
 public class Member {
-  String id = "";
-  String name = "";
-  int age = 0;
+  private String name;
 
-public Member(String id, String name, int age){
-  this.id = id;
-  this.name = name;
-  this.age = age;
-}
-public String getId() {
-  return this.id.getId();
-}
+  public Member(){super();}
 
-public void setId(String id) {
-  this.id.setId(id);
-}
+  public Member(String name) {
+    super();
+    this.name = name;
+  }
 
-public String getName() {
-  return this.id.getId();
-}
+  public String getName() {return name;}
 
-public void setName(String name) {
-  this.id.setName(name);
-}
-
-public int getAge() {
-  return this.id.getAge();
-}
-
-public void setAge(String age) {
-  this.id.setAge(age);
-}
-
-
+  public void setName(String name) {this.name = name;}
 }
