@@ -70,3 +70,18 @@ private static void inquiryGrade() {
 
    }
 }
+private static void insertGrade() {
+
+
+      Scanner s = new Scanner(System.in);
+
+      System.out.print("아이디: ");
+      String id = s.nextLine().trim();
+      System.out.print("이름: ");
+      Member name = new Member();
+      name.setName(s.nextLine());
+      
+      System.out.println("아이디와 이름이 입력되었습니다.");
+      map.put(id, name);
+
+   }
