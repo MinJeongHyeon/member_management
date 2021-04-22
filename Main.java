@@ -1,4 +1,5 @@
 import java.util.*;
+import java.security.*;
 
 public class Main {
 	public static HashMap<String, Object> map = new HashMap<String, Object>();
@@ -82,7 +83,8 @@ public class Main {
 		System.out.print("아이디: ");
 		String id = s.nextLine();
     System.out.print("비밀번호: ");
-		member.setPassword(s.nextLine());
+		String password = member.sha256(s.nextLine());
+    member.setPassword(password);
 		System.out.print("이름: ");
 		member.setName(s.nextLine());
 		
