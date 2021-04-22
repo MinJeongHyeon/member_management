@@ -1,19 +1,7 @@
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
-	public static HashMap<String, Member> map = new HashMap<String, Member>();
-	
-	private static final int EXIT = 0;
-	private static final int INSERT = 1;
-	private static final int DELETE = 2;
-	private static final int INQUIRY = 3;
-	private static final int SUM = 4;
-	private static final int AVG = 5;
-	
+	public static HashMap<String, Object> map = new HashMap<String, Object>();
 	
 	public static void main(String[] args) {
 
@@ -34,65 +22,73 @@ public class Main {
 
 			switch (menu) {
 
-			case EXIT:
-				exitGrade();
+			case 0:
+				exit();
 				break;
 
-			case INSERT:
-				insertGrade();
+			case 1:
+				insert();
 				break;
 
-			case DELETE:
-				deleteGrade();
+			case 2:
+				delete();
 				break;
 
-			case INQUIRY:
-				inquiryGrade();
+			case 3:
+				inquiry();
 				break;
 				
+      default:
+        System.out.println("값이 잘못되었습니다.");
 
 			}
 		}
 
 	}
 
-	private static void exitGrade() {
+
+	private static void exit() {
 		System.out.println("프로그램을 종료합니다.");
 		System.exit(0);
 	}
 
-	private static void deleteGrade() {
-   
+	private static void delete() {
+	
 
-	      Scanner s = new Scanner(System.in);
-	      String id = s.nextLine().trim();
-      
-	      System.out.println(id + "을 삭제합니다.");
-	      map.remove(id);
+		Scanner s = new Scanner(System.in);
+		String id = s.nextLine();
+		
+		System.out.println(id + "을 삭제합니다.");
+		map.remove(id);
 
-	private static void inquiryGrade() {
-   
-      		Set<Map.Entry<String, Member>> set = map.entrySet();
+	}
 
-     		 for(Map.Entry<String, Member> me : set) {
-       		  System.out.println(me.getKey() + " : " + me.getValue().getName());
-     		 }
+	private static void inquiry() {
+	
+		Set<Map.Entry<String, Object>> set = map.entrySet();
 
+		for(Map.Entry<String, Object> me : set) {
+      Member memberValue = (Member)me.getValue();
+			System.out.println(me.getKey() + " : " + memberValue.getPassword() + ", " + memberValue.getName()); 
+		}
 
-   }
+	}
+
+  private static void insert() {
+
+	  Scanner s = new Scanner(System.in);
+    Member member = new Member();
+
+		System.out.print("아이디: ");
+		String id = s.nextLine();
+    System.out.print("비밀번호: ");
+		member.setPassword(s.nextLine());
+		System.out.print("이름: ");
+		member.setName(s.nextLine());
+		
+		System.out.println("성공적으로 입력되었습니다.");
+		map.put(id, member);
+
+	}
+
 }
-private static void insertGrade() {
-
-
-      Scanner s = new Scanner(System.in);
-
-      System.out.print("아이디: ");
-      String id = s.nextLine().trim();
-      System.out.print("이름: ");
-      Member name = new Member();
-      name.setName(s.nextLine());
-      
-      System.out.println("아이디와 이름이 입력되었습니다.");
-      map.put(id, name);
-
-   }
