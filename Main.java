@@ -1,12 +1,10 @@
-package Calc0506;
-
 import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
     // 객체 생성 및 변수 초기화
     Scanner scanner = new Scanner(System.in);
-    Calculator calculator = new Calculator();
+    Calculator2 calculator = new Calculator2();
     double result = 0;
     int x = 0;
     int y = 0;
@@ -20,7 +18,7 @@ public class Main {
       symbol = scanner.next();
       // 팩토리얼은 값이 하나만 필요하기 때문에
       // 두번째 값을 입력 받기 전에 결과를 출력
-      if (symbol.factorial("!")) {
+      if (symbol.equals("!")) {
         result = calculator.factorial(x);
         System.out.println(x+symbol+"="+result);
       }
@@ -32,16 +30,16 @@ public class Main {
         if (symbol.equals("+")) {
           result = calculator.add(x, y);
         }
-        else if (symbol.equlas("-")) {
+        else if (symbol.equals("-")) {
           result = calculator.minus(x, y);
         }
-        else if (symbol.equlas("*")) {
+        else if (symbol.equals("*")) {
           result = calculator.multiply(x, y);
         }
-        else if (symbol.equlas("/")) {
+        else if (symbol.equals("/")) {
           result = calculator.divide(x, y);
         }
-        else if (symbol.square("^")) {
+        else if (symbol.equals("^")) {
           result = calculator.square(x, y);
         }
         else {
