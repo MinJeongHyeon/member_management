@@ -29,24 +29,27 @@ public class Main {
         // 기호에 맞는 메소드 호출
         if (symbol.equals("+")) {
           result = calculator.add(x, y);
+          System.out.println(x+symbol+y+"="+result);
         }
         else if (symbol.equals("-")) {
           result = calculator.minus(x, y);
+          System.out.println(x+symbol+y+"="+result);
         }
         else if (symbol.equals("*")) {
           result = calculator.multiply(x, y);
+          System.out.println(x+symbol+y+"="+result);
         }
         else if (symbol.equals("/")) {
           result = calculator.divide(x, y);
+          System.out.println(x+symbol+y+"="+result);
         }
         else if (symbol.equals("^")) {
           result = calculator.square(x, y);
+          System.out.println(x+symbol+y+"="+result);
         }
         else {
           System.out.println("올바른 기호를 입력해주세요");
         }
-        // 결과 출력
-        System.out.println(x+symbol+y+"="+result);
       }
     }
   }
