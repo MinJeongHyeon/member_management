@@ -6,8 +6,6 @@ public class Calculator2 extends Calculator {
     }
       return result;
    }
-}
-public class Calculator2 extends Calculator {
    static int factorial(int a) {
     int result=1;
     for (int i=1; i<=a; i++) {
