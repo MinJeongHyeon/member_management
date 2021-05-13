@@ -5,7 +5,7 @@ public class ProductList {
 	// Scanner, ArrayList 按眉 积己
 	static Scanner scanner = new Scanner(System.in);
 	static ArrayList<Product> productList = new ArrayList<Product>();
-	
+
 	// 惑前 涝绊
 	public static void warehousing() {
 		Product product = new Product();
@@ -38,6 +38,7 @@ public class ProductList {
 		for (Product pr : productList) {
 			if(pr.getId().equals(id)){
 				productList.remove(pr);
+				break;
 			}
 		}
 	}

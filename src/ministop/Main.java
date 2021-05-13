@@ -32,8 +32,10 @@ public class Main {
 					LogList.output();
 					break;
 				case 6: // 프로그램 종료
+					System.exit(0);
 					break;
 				default:
+					System.out.println("유효하지 않은 값입니다.");
 					break;
 			}
 		}
