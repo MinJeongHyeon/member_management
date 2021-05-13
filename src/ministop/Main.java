@@ -16,15 +16,21 @@ public class Main {
 			System.out.println("--------------------");
 			menu = scanner.nextInt();
 			switch (menu) {
-				case 1:
+				case 1: // 상품 입고
 					ProductList.warehousing();
 					break;
-				case 2:
+				case 2: // 상품 목록
 					ProductList.output();
 					break;
-				case 3:
+				case 3: // 상품 삭제
+					ProductList.delete();
 					break;
-				case 4:
+				case 4: // 상품 판매
+					ProductList.sell();
+					break;
+				case 5: // 판매 로그
+					break;
+				case 6: // 프로그램 종료
 					break;
 				default:
 					break;
