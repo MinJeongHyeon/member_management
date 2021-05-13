@@ -20,6 +20,7 @@ public class Main {
 					ProductList.warehousing();
 					break;
 				case 2:
+					ProductList.output();
 					break;
 				case 3:
 					break;
