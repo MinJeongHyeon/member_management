@@ -5,21 +5,7 @@ public class Product {
 	int price;
 	String name;
 	int amount;
-	int total;
-	int sales;
 	
-	public int getTotal() {
-		return total;
-	}
-	public void setTotal(int total) {
-		this.total = total;
-	}
-	public int getSales() {
-		return sales;
-	}
-	public void setSales(int sales) {
-		this.sales = sales;
-	}
 	public String getId() {
 		return id;
 	}

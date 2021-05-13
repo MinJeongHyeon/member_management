@@ -44,6 +44,7 @@ public class ProductList {
 	
 	// 상품 판매
 	public static void sell() {
+		LogList logList = new LogList();
 		System.out.print("판매한 상품의 ID를 입력하세요: ");
 		String id = scanner.next();
 		System.out.print("판매한 상품의 수량을 입력하세요: ");
@@ -51,11 +52,11 @@ public class ProductList {
 		for (Product pr : productList) {
 			if(pr.getId().equals(id)){
 				pr.setAmount(pr.getAmount() - amount);
-				
+				logList.setLog(pr, amount);
 			}
 		}
-		
-		
 	}
+	
+	
 }
 

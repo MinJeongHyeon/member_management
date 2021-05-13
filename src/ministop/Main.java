@@ -29,6 +29,7 @@ public class Main {
 					ProductList.sell();
 					break;
 				case 5: // 판매 로그
+					LogList.output();
 					break;
 				case 6: // 프로그램 종료
 					break;
