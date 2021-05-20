@@ -9,7 +9,6 @@ public class Machine {
 	static Scanner scanner = new Scanner(System.in);
 	static ArrayList<Drink> machine = new ArrayList<Drink>();
 	static int money = 0;
-	static int count = 1;
 	
 	// 금액 투입 메소드
 	public static void insertMoney() {
@@ -68,34 +67,61 @@ public class Machine {
 		Drink drink = new Drink();
 		
 		// 음료수 번호 설정
-		drink.setNumber(count);
-		System.out.print("음료수 번호는 " + count + "번으로 설정됩니다.");
+			System.out.println("음료수 번호는 " + machine.size() + "번으로 설정됩니다.");
 		
 		// 음료수 정보 입력
-		System.out.print("음료수 이름을 입력해주세요: ");
+		System.out.println("음료수 이름을 입력해주세요: ");
 		drink.setName(scanner.next());
 		
-		System.out.print("음료수 가격을 입력해주세요: ");
+		System.out.println("음료수 가격을 입력해주세요: ");
 		drink.setPrice(scanner.nextInt());
 		
-		System.out.print("음료수 수량을 입력해주세요: ");
+		System.out.println("음료수 수량을 입력해주세요: ");
 		drink.setAmount(scanner.nextInt());
-		
-		System.out.print("음료수 유통기한을 입력해주세요: ");
-		drink.setShelfLife(scanner.next());
 		
 		// ArrayList에 추가
 		machine.add(drink);
-		count++;
 	}
 	
 	// 음료수 구매 메소드
 	public static void saleDrink() {
 		
+		int number = 0;
+		// 음료수 목록 출력
+		for(int i=0; i<machine.size(); i++) {
+			Drink drink = machine.get(i);
+			
+			System.out.print("번호: " + i + "\t");
+			System.out.print("이름: " + drink.getPrice() + "\t");
+			System.out.println("가격: " + drink.getAmount());		
+		}
+		
+		// 구매할 음료수 번호 입력
+		System.out.print("구매할 음료수의 번호를 입력해주세요: ");
+		number = scanner.nextInt();
+		
+		Drink drink = machine.get(number);
+		if(money - drink.getPrice() < 0) {
+			System.out.println("잔액이 부족하여서 구매를 취소합니다.");
+		}
+		else if(drink.getAmount() <= 0) {
+			System.out.println("수량이 부족하여서 구매를 취소합니다.");
+		}
+		else {
+			money -= drink.getPrice();
+			drink.setAmount(drink.getAmount()-1);
+			System.out.println(drink.getName() + " 음료를 구매합니다.");
+			System.out.println(drink.getPrice() + "원으로 구매하여 " + money + "원 남았습니다.");
+		}
 	}
 	
 	// 재고 수정 메소드
 	public static void editDrink() {
+		
+	}
+	
+	// 재고 목록 메소드
+	public static void printDrink() {
 		
 	}
 	

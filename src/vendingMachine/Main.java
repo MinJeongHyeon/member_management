@@ -11,7 +11,7 @@ public class Main {
 		// 메뉴 while문
 		while(true) {
 			System.out.println("--------------------");
-			System.out.println("자판기 프로그램 (사용자)");
+			System.out.println("자판기 프로그램 (사용자) / " + Machine.money + "원 투입됨");
 			System.out.println("1. 금액 투입");
 			System.out.println("2. 잔돈 반환");
 			System.out.println("3. 음료수 구매");
@@ -43,10 +43,11 @@ public class Main {
 						System.out.println("--------------------");
 						System.out.println("자판기 프로그램 (관리자)");
 						System.out.println("1. 재고 추가");
-						System.out.println("2. 재고 수정");
-						System.out.println("3. 재고 삭제");
-						System.out.println("4. 사용자 모드");
-						System.out.println("5. 종료");
+						System.out.println("2. 재고 목록");
+						System.out.println("3. 재고 수정");
+						System.out.println("4. 재고 삭제");
+						System.out.println("5. 사용자 모드");
+						System.out.println("6. 종료");
 						System.out.println("--------------------");
 						
 						// 메뉴 입력 후 switch문으로 해당 메소드 실행
@@ -57,18 +58,21 @@ public class Main {
 							Machine.warehousing();
 							break;
 							
-						case 2: // 재고 수정
+						case 2: // 재고 목록
+							Machine.printDrink();
+							
+						case 3: // 재고 수정
 							Machine.editDrink();
 							break;
 							
-						case 3: // 재고 삭제
+						case 4: // 재고 삭제
 							Machine.deleteDrink();
 							break;
 							
-						case 4: // 사용자 모드
+						case 5: // 사용자 모드
 							break; // while문에서 조건으로 빠져나옴
 						
-						case 5: // 종료
+						case 6: // 종료
 							System.exit(0);
 							break;
 						}
