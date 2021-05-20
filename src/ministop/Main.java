@@ -15,25 +15,33 @@ public class Main {
 			System.out.println("6. 프로그램 종료");
 			System.out.println("--------------------");
 			menu = scanner.nextInt();
+			
 			switch (menu) {
+			
 				case 1: // 상품 입고
 					ProductList.warehousing();
 					break;
+					
 				case 2: // 상품 목록
 					ProductList.output();
 					break;
+					
 				case 3: // 상품 삭제
 					ProductList.delete();
 					break;
+					
 				case 4: // 상품 판매
 					ProductList.sell();
 					break;
+					
 				case 5: // 판매 로그
 					LogList.output();
 					break;
+					
 				case 6: // 프로그램 종료
 					System.exit(0);
 					break;
+					
 				default:
 					System.out.println("유효하지 않은 값입니다.");
 					break;
