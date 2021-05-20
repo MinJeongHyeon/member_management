@@ -18,6 +18,7 @@ public class Main {
 			System.out.println("4. 관리자 모드");
 			System.out.println("5. 종료");
 			System.out.println("--------------------");
+			System.out.print("번호를 입력하세요 : ");
 			
 			// 메뉴 입력 후 switch문으로 해당 메소드 실행
 			menu = scanner.nextInt();
@@ -39,7 +40,7 @@ public class Main {
 					adminMenu = 0; // 메뉴 변수 초기화
 					
 					// 메뉴 while문
-					while(adminMenu != 4) {
+					while(adminMenu != 5) {
 						System.out.println("--------------------");
 						System.out.println("자판기 프로그램 (관리자)");
 						System.out.println("1. 재고 추가");
@@ -49,6 +50,7 @@ public class Main {
 						System.out.println("5. 사용자 모드");
 						System.out.println("6. 종료");
 						System.out.println("--------------------");
+						System.out.print("번호를 입력하세요 : ");
 						
 						// 메뉴 입력 후 switch문으로 해당 메소드 실행
 						adminMenu = scanner.nextInt();
@@ -60,6 +62,7 @@ public class Main {
 							
 						case 2: // 재고 목록
 							Machine.printDrink();
+							break;
 							
 						case 3: // 재고 수정
 							Machine.editDrink();

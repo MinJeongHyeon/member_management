@@ -1,8 +1,6 @@
 package vendingMachine;
 import java.util.*;
 
-import ministop.Product;
-
 public class Machine {
 	
 	// 객체, 변수 초기화
@@ -18,12 +16,12 @@ public class Machine {
 		int won = 0;
 		int volume = 0;
 		
-		// 화폐 입력
-		System.out.println("넣을 지폐나 동전을 입력해주세요");
+		// 화폐 입력	
 		System.out.println("1. 100원");
 		System.out.println("2. 500원");
 		System.out.println("3. 1000원");
 		System.out.println("4. 5000원");
+		System.out.print("넣을 지폐나 동전을 입력해주세요 : ");
 		number = scanner.nextInt();
 		
 		if(number==1) {
@@ -70,13 +68,13 @@ public class Machine {
 			System.out.println("음료수 번호는 " + machine.size() + "번으로 설정됩니다.");
 		
 		// 음료수 정보 입력
-		System.out.println("음료수 이름을 입력해주세요: ");
+		System.out.print("음료수 이름을 입력해주세요: ");
 		drink.setName(scanner.next());
 		
-		System.out.println("음료수 가격을 입력해주세요: ");
+		System.out.print("음료수 가격을 입력해주세요: ");
 		drink.setPrice(scanner.nextInt());
 		
-		System.out.println("음료수 수량을 입력해주세요: ");
+		System.out.print("음료수 수량을 입력해주세요: ");
 		drink.setAmount(scanner.nextInt());
 		
 		// ArrayList에 추가
@@ -92,8 +90,9 @@ public class Machine {
 			Drink drink = machine.get(i);
 			
 			System.out.print("번호: " + i + "\t");
-			System.out.print("이름: " + drink.getPrice() + "\t");
-			System.out.println("가격: " + drink.getAmount());		
+			System.out.print("이름: " + drink.getName() + "\t");
+			System.out.print("가격: " + drink.getPrice() + "\t");		
+			System.out.println("수량: " + drink.getAmount());	
 		}
 		
 		// 구매할 음료수 번호 입력
@@ -118,17 +117,57 @@ public class Machine {
 	// 재고 수정 메소드
 	public static void editDrink() {
 		
+		// 수정할 음료수 번호 입력
+		System.out.print("수정할 음료수의 번호를 입력해주세요 : ");
+		int number = scanner.nextInt();
+		
+		// 수정할 항목 입력
+		System.out.println("1. 이름	2. 가격	3. 수량");
+		System.out.print("어떤 부분을 수정하시겠습니까? : ");
+		int menu = scanner.nextInt();
+		
+		Drink drink = machine.get(number);
+		switch (menu) { // 메뉴
+		
+		case 1: // 이름 변경
+			System.out.print("변경할 이름을 입력하세요 (현재 이름 : " + drink.getName() + ") : ");
+			drink.setName(scanner.next());
+			System.out.println("변경 완료");
+			break;
+			
+		case 2: // 가격 변경
+			System.out.print("변경할 가격을 입력하세요 (현재 가격 : " + drink.getPrice() + ") : ");
+			drink.setPrice(scanner.nextInt());
+			System.out.println("변경 완료");
+			break;
+			
+		case 3: // 수량 변경
+			System.out.print("변경할 수량을 입력하세요 (현재 수량 : " + drink.getAmount() + ") : ");
+			drink.setAmount(scanner.nextInt());
+			System.out.println("변경 완료");
+			break;
+		}
+		
 	}
 	
 	// 재고 목록 메소드
 	public static void printDrink() {
-		
+		for(int i=0; i<machine.size(); i++) {
+			Drink drink = machine.get(i);
+			
+			System.out.print("번호 : " + i + "\t");
+			System.out.print("이름 : " + drink.getName() + "\t");
+			System.out.print("가격 : " + drink.getPrice() + "\t");		
+			System.out.println("수량 : " + drink.getAmount());
+		}
 	}
 	
 	// 재고 삭제 메소드
 	public static void deleteDrink() {
-		
+		System.out.print("삭제할 음료수의 번호를 입력하세요 : ");
+		int number = scanner.nextInt();
+		System.out.println(machine.get(number).getName() + " 음료 항목을 제거합니다.");
+		machine.remove(number);
 	}
-
 
 }
