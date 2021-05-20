@@ -51,7 +51,14 @@ public class Machine {
 	
 	// 잔돈 반환 메소드
 	public static void returnMoney() {
-		
+		if(money==0) {
+			System.out.print("반환 할 돈이 없습니다.");
+		}
+		else {
+			money=0;
+		}
+		System.out.print("잔돈: " + money + "원");
+		System.out.print("반환 완료 되었습니다.");
 	}
 	
 	// 재고 추가 메소드
