@@ -1,11 +1,15 @@
 package vendingMachine;
 
 public class Drink {
+	
+	// 필드 선언
 	private int number;
 	private String name;
 	private int price;
 	private int amount;
 	private String shelfLife;
+	
+	// getter, setter 메소드
 	public int getNumber() {
 		return number;
 	}

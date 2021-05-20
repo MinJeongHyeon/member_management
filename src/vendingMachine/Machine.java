@@ -1,12 +1,19 @@
 package vendingMachine;
+import java.util.*;
 
 public class Machine {
-
-	public static void insertMoeny() {
+	
+	// 객체, 변수 초기화
+	static Scanner scanner = new Scanner(System.in);
+	static ArrayList<Drink> machine = new ArrayList<Drink>();
+	int money = 0;
+	
+	// 금액 투입 메소드
+	public static void insertMoney() {
 		
 	}
 	
-	public static void returntMoeny() {
+	public static void returnMoney() {
 		
 	}
 	
