@@ -32,17 +32,17 @@ public class List {
 			resident.put("houseHolder", scanner.next());
 			
 			System.out.println("연락처를 입력해주세요");
-			resident.put("Tel", scanner.next());
+			resident.put("tel", scanner.next());
 			
-			System.out.println("주거비를 입력해주세요");
-			resident.put("Sell", scanner.next());
+			System.out.println("임대 방식을 입력해주세요 (자가, 전세, 월세)");
+			resident.put("sell", scanner.next());
 		
 			// JSONArray에 JSONObject 입력
 			array.add(resident);
 
 			// 파일에 덮어쓰기
 			try {
-				FileWriter file = new FileWriter("jsonlist.json", true);
+				FileWriter file = new FileWriter("jsonlist.json", false);
 				file.write(array.toJSONString());
 				file.flush();
 				file.close();
@@ -58,7 +58,12 @@ public class List {
 			Object object = parser.parse(new FileReader("jsonlist.json"));
 			array = (JSONArray) object;
 			for (int i=0; i<array.size(); i++) {
-				System.out.println(array.get(i));
+				JSONObject obj = (JSONObject) array.get(i);
+				System.out.print(obj.get("dong") + "동\t");
+				System.out.print(obj.get("ho") + "호\t");
+				System.out.print("세대주: " + obj.get("houseHolder") + "\t");
+				System.out.print("연락처: " + obj.get("tel") + "\t");
+				System.out.println("임대 방식: " + obj.get("sell") + "\t");
 			}
 			
 		}
