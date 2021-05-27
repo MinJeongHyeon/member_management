@@ -15,7 +15,10 @@ public class Main {
 		System.out.println("1. 입주 정보 입력");
 		System.out.println("2. 입주 정보 출력");
 		System.out.println("-------------------");
-		
+
+		System.out.println("▼▼▼더 크로스 비공식 앱 다운로드 바로가기▼▼▼");
+		System.out.println(" https://play.google.com/store/apps/details?id=com.hopeproject.thecross2001_app&hl=ko");
+
 		// 메뉴 선택 후 switch문으로 해당 메소드 실행
 		menu = scanner.nextInt();
 		switch (menu) {
