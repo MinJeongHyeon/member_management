@@ -19,37 +19,37 @@ public class List {
 	
 	public static void input() {
 		
-			// JSONObject »ı¼º
-			JSONObject resident = new JSONObject();
-		
-			System.out.println("µ¿À» ÀÔ·ÂÇØÁÖ¼¼¿ä");
-			resident.put("dong", scanner.nextInt());
-			
-			System.out.println("È£¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
-			resident.put("ho", scanner.nextInt());
-			
-			System.out.println("¼¼´ëÁÖ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
-			resident.put("houseHolder", scanner.next());
-			
-			System.out.println("¿¬¶ôÃ³¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
-			resident.put("tel", scanner.next());
-			
-			System.out.println("ÀÓ´ë ¹æ½ÄÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä (ÀÚ°¡, Àü¼¼, ¿ù¼¼)");
-			resident.put("sell", scanner.next());
-		
-			// JSONArray¿¡ JSONObject ÀÔ·Â
-			array.add(resident);
+		// JSONObject ìƒì„±
+					JSONObject resident = new JSONObject();
+				
+					System.out.println("ë™ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
+					resident.put("dong", scanner.nextInt());
+					
+					System.out.println("í˜¸ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
+					resident.put("ho", scanner.nextInt());
+					
+					System.out.println("ì„¸ëŒ€ì£¼ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
+					resident.put("houseHolder", scanner.next());
+					
+					System.out.println("ì—°ë½ì²˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
+					resident.put("tel", scanner.next());
+					
+					System.out.println("ì„ëŒ€ ë°©ì‹ì„ ì…ë ¥í•´ì£¼ì„¸ìš” (ìê°€, ì „ì„¸, ì›”ì„¸)");
+					resident.put("sell", scanner.next());
+				
+					// JSONArrayì— JSONObject ì…ë ¥
+					array.add(resident);
 
-			// ÆÄÀÏ¿¡ µ¤¾î¾²±â
-			try {
-				FileWriter file = new FileWriter("jsonlist.json", false);
-				file.write(array.toJSONString());
-				file.flush();
-				file.close();
-			}
-			catch (IOException e) {
-				e.printStackTrace();
-			}
+					// íŒŒì¼ì— ë®ì–´ì“°ê¸°
+					try {
+						FileWriter file = new FileWriter("jsonlist.json", false);
+						file.write(array.toJSONString());
+						file.flush();
+						file.close();
+					}
+					catch (IOException e) {
+						e.printStackTrace();
+					}
 		
 	}
 	
@@ -59,11 +59,11 @@ public class List {
 			array = (JSONArray) object;
 			for (int i=0; i<array.size(); i++) {
 				JSONObject obj = (JSONObject) array.get(i);
-				System.out.print(obj.get("dong") + "µ¿\t");
-				System.out.print(obj.get("ho") + "È£\t");
-				System.out.print("¼¼´ëÁÖ: " + obj.get("houseHolder") + "\t");
-				System.out.print("¿¬¶ôÃ³: " + obj.get("tel") + "\t");
-				System.out.println("ÀÓ´ë ¹æ½Ä: " + obj.get("sell") + "\t");
+				System.out.print(obj.get("dong") + "ë™\t");
+				System.out.print(obj.get("ho") + "í˜¸\t");
+				System.out.print("ì„¸ëŒ€ì£¼: " + obj.get("houseHolder") + "\t");
+				System.out.print("ì—°ë½ì²˜: " + obj.get("tel") + "\t");
+				System.out.println("ì„ëŒ€ ë°©ì‹: " + obj.get("sell") + "\t");
 			}
 			
 		}
