@@ -13,15 +13,11 @@ import org.json.simple.parser.ParseException;
 
 public class List {
 	
-	Scanner scanner = new Scanner(System.in);
-	JSONArray array = new JSONArray();
-	JSONParser parser = new JSONParser();
+	static Scanner scanner = new Scanner(System.in);
+	static JSONArray array = new JSONArray();
+	static JSONParser parser = new JSONParser();
 	
-	public void save() {
-		
-	}
-	
-	public void input() {
+	public static void input() {
 		
 			// JSONObject »ý¼º
 			JSONObject resident = new JSONObject();
@@ -57,7 +53,7 @@ public class List {
 		
 	}
 	
-	public void output() {
+	public static void output() {
 		try {
 			Object object = parser.parse(new FileReader("jsonlist.json"));
 			array = (JSONArray) object;

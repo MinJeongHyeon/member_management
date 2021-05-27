@@ -23,10 +23,7 @@ public class Main {
 			case 1: //입력
 				List.input();
 				break;
-			case 2: //저장
-				List.save();
-				break;
-			case 3: //출력
+			case 2: //출력
 				List.output();
 				break;
 			default:
