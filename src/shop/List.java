@@ -125,7 +125,7 @@ public class List {
 	   2021.06.03 - 민정현 - for문 조건 변경 및 json 파일 쓰기 추가
 	*/
 	public static void delete() {
-		  try {
+		try {
 			  // json 파일 읽기
 			  Object object = parser.parse(new FileReader("product_list.json"));
 			  
@@ -156,8 +156,8 @@ public class List {
 			  }
 		  }
 		  // 예외 처리
-	      catch (FileNotFoundException e) { e.printStackTrace(); } 
-	      catch (IOException e) { e.printStackTrace(); } 
-	      catch (ParseException e) { e.printStackTrace(); }
-	   }
+		catch (FileNotFoundException e) { e.printStackTrace(); } 
+		catch (IOException e) { e.printStackTrace(); } 
+		catch (ParseException e) { e.printStackTrace(); }
+	}
 }

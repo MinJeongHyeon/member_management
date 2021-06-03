@@ -27,7 +27,7 @@ public class Main {
 		while(true) {
 			System.out.println("--------------------");
 			System.out.println("쇼핑몰 (사용자)");
-			System.out.println("1. 상품 검색");
+			System.out.println("1. 상품 출력");
 			System.out.println("2. 장바구니");
 			System.out.println("3. 관리자 모드");
 			System.out.println("--------------------");
@@ -37,20 +37,21 @@ public class Main {
 			menu = scanner.nextInt();
 			switch (menu) { // 메뉴
 			
-				case 1: // 상품 검색
-					// List.search();
+				case 1: // 상품 출력
+					List.output();
 					break;
 					
 				case 2: // 장바구니
 					cartMenu = 0; // 장바구니 메뉴 변수 초기화
 					
 					// 장바구니 메뉴 while문
-					while(cartMenu != 3) {
+					while(cartMenu != 4) {
 						System.out.println("--------------------");
 						System.out.println("장바구니");
-						System.out.println("1. 상품 목록");
-						System.out.println("2. 상품 제거");
-						System.out.println("3. 사용자 모드");
+						System.out.println("1. 상품 추가");
+						System.out.println("2. 상품 출력");
+						System.out.println("3. 상품 삭제");
+						System.out.println("4. 사용자 모드");
 						System.out.println("--------------------");
 						System.out.print("번호를 입력하세요 : ");
 						
@@ -59,14 +60,18 @@ public class Main {
 						switch (cartMenu) {
 						
 						case 1: // 장바구니 상품 목록
-							Cart.output();
+							Cart.input();
 							break;
 							
 						case 2: // 장바구니 상품 제거
+							Cart.output();
+							break;
+						
+						case 3: // 장바구니 상품 제거
 							Cart.delete();
 							break;
 							
-						case 3: // while문에서 조건으로 빠져나옴
+						case 4: // while문에서 조건으로 빠져나옴
 							break;
 						}
 					}
@@ -76,14 +81,13 @@ public class Main {
 					adminMenu = 0; // 관리자 메뉴 변수 초기화
 					
 					// 관리자 메뉴 while문
-					while(adminMenu != 5) {
+					while(adminMenu != 4) {
 						System.out.println("--------------------");
 						System.out.println("쇼핑몰 (관리자)");
 						System.out.println("1. 상품 추가");
 						System.out.println("2. 상품 목록");
-						System.out.println("3. 상품 수정");
-						System.out.println("4. 상품 삭제");
-						System.out.println("5. 사용자 모드");
+						System.out.println("3. 상품 삭제");
+						System.out.println("4. 사용자 모드");
 						System.out.println("--------------------");
 						System.out.print("번호를 입력하세요 : ");
 						
@@ -99,15 +103,11 @@ public class Main {
 							List.output();
 							break;
 							
-						case 3: // 상품 수정
-							// List.edit();
-							break;
-							
-						case 4: // 상품 삭제
+						case 3: // 상품 삭제
 							List.delete();
 							break;
 							
-						case 5: // 사용자 모드
+						case 4: // 사용자 모드
 							break; // while문에서 조건으로 빠져나옴
 						}
 					}
