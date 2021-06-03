@@ -30,6 +30,17 @@ public class Cart {
 	static JSONArray cart_array = new JSONArray();
 	static JSONParser parser = new JSONParser();
 	
+	/**
+	   @name input
+	   @title 장바구니 상품 추가 메소드
+	   @detail 장바구니 안에 상품을 추가하는 메소드
+	   @author 민정현
+	   @since 2021.06.03
+	   @version 1.0
+	   ============edit log============
+	   Date - Author - Note
+	   2021.06.03 - 민정현 - 초안 작성
+	*/
 	public static void input() {
 		try {
 			  // json 파일 읽기
@@ -76,6 +87,17 @@ public class Cart {
 		catch (ParseException e) { e.printStackTrace(); }
 	}
 	
+	/**
+	   @name output
+	   @title 장바구니 출력 메소드
+	   @detail 장바구니 안에 있는 상품 목록을 출력하는 메소드
+	   @author 민정현
+	   @since 2021.06.03
+	   @version 1.0
+	   ============edit log============
+	   Date - Author - Note
+	   2021.06.03 - 민정현 - 초안 작성
+	*/
 	public static void output() {
 		 try {
 	    	  // json 파일 읽기
@@ -100,6 +122,17 @@ public class Cart {
 	      
 	}
 	
+	/**
+	   @name delete
+	   @title 장바구니 상품 삭제 메소드
+	   @detail 장바구니 안에 있는 상품을 삭제하는 메소드
+	   @author 민정현
+	   @since 2021.06.03
+	   @version 1.0
+	   ============edit log============
+	   Date - Author - Note
+	   2021.06.03 - 민정현 - 초안 작성
+	*/
 	public static void delete() {
 		try {
 			  // json 파일 읽기
