@@ -41,7 +41,6 @@ public class List {
 	   	Date - Author - Note
 	   	2021.06.03 - 진다혜 - 초안 작성
 	*/
-	
 	public static void input() {
 	   
 		// JSONObject 생성
@@ -49,16 +48,16 @@ public class List {
         
         // 상품 정보 입력
         System.out.println("id를 입력해주세요");
-        product.put("id", scanner.nextInt());
+        product.put("id", scanner.next());
         
         System.out.println("상품명을 입력해주세요");
-        product.put("productName", scanner.nextInt());
+        product.put("productName", scanner.next());
         
         System.out.println("가격을 입력해주세요");
-        product.put("price", scanner.next());
+        product.put("price", scanner.nextInt());
         
         System.out.println("수량을 입력해주세요");
-        product.put("amount", scanner.next());
+        product.put("amount", scanner.nextInt());
         
         // JSONArray에 상품 정보가 입력된 JSONObject 입력
         array.add(product);
@@ -87,7 +86,6 @@ public class List {
 	   Date - Author - Note
 	   2021.06.03 - 김영임 - 초안 작성
 	 */
-
 	public static void output() {
 	      try {
 	    	  // json 파일 읽기
@@ -110,6 +108,7 @@ public class List {
 	      catch (FileNotFoundException e) { e.printStackTrace(); } 
 	      catch (IOException e) { e.printStackTrace(); } 
 	      catch (ParseException e) { e.printStackTrace(); }
+	      
 	   }
 
 	/**
@@ -118,11 +117,12 @@ public class List {
 	   @detail 상품을 삭제하는 메소드
 	   @author 김동엽
 	   @since 2021.06.03
-	   @version 1.1
+	   @version 1.2
 	   ============edit log============
 	   Date - Author - Note
 	   2021.06.03 - 김동엽 - 초안 작성
 	   2021.06.03 - 민정현 - productId type 변경 (integer=>String)
+	   2021.06.03 - 민정현 - for문 조건 변경 및 json 파일 쓰기 추가
 	*/
 	public static void delete() {
 		  try {
@@ -139,12 +139,19 @@ public class List {
 			  // for문으로 전체 탐색하여 입력받은 id와 일치하는 상품 제거
 			  for (int i=0; i<array.size(); i++) {
 				  JSONObject obj = (JSONObject) array.get(i);
-				  if(obj.get("id")==productId) {
+				  if(obj.get("id").equals(productId)) {
 					  System.out.println(obj.get("productName") + " 상품이 제거되었습니다.");
 					  array.remove(i);
-				  }
-				  else {
-					  System.out.println("해당 상품을 찾지 못했습니다.");
+					  // json 파일에 저장
+					  try {
+				           FileWriter file = new FileWriter("product_list.json", false);
+				           file.write(array.toJSONString());
+				           file.flush();
+				           file.close();
+				        }
+				        catch (IOException e) {
+				           e.printStackTrace();
+				        }
 				  }
 			  }
 		  }
