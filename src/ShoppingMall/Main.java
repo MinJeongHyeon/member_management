@@ -38,7 +38,7 @@ public class Main {
 			switch (menu) { // 메뉴
 			
 				case 1: // 상품 검색
-					List.search();
+					// List.search();
 					break;
 					
 				case 2: // 장바구니
@@ -100,7 +100,7 @@ public class Main {
 							break;
 							
 						case 3: // 상품 수정
-							List.edit();
+							// List.edit();
 							break;
 							
 						case 4: // 상품 삭제
