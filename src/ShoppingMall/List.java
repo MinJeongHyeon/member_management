@@ -1,39 +1,30 @@
-package shoppingmall;
+/**
+   @name delete
+   @title 상품 삭제 메소드
+   @detail 상품을 삭제하는 메소드
+   @author 김동엽
+   @since 2021.06.03
+   @version 1.0
+   ============edit log============
+   Date - Author - Note
+   2021.06.03 - 김동엽 - 초안 작성
 
-static Scanner scanner = new Scanner(System.in);
-static JSONArray array = new JSONArray();
-static JSONParser parser = new JSONParser();
+ */
 
-public static void input() {
-   
-   // JSONObject 생성
-            JSONObject product = new JSONObject();
-         
-            System.out.println("id를 입력해주세요");
-            product.put("id", scanner.nextInt());
-            
-            System.out.println("상품명을 입력해주세요");
-            product.put("productName", scanner.nextInt());
-            
-            System.out.println("가격을 입력해주세요");
-            product.put("price", scanner.next());
-            
-            System.out.println("수량을 입력해주세요");
-            product.put("amount", scanner.next());
-            
-         
-            // JSONArray에 JSONObject 입력
-            array.add(product);
-
-            // 파일에 덮어쓰기
-            try {
-               FileWriter file = new FileWriter(" product_list.json", false);
-               file.write(array.toJSONString());
-               file.flush();
-               file.close();
+public static void delete() {
+      Object object = parser.parse(new FileReader("product_list.json"));
+        array = (JSONArray) object;
+        System.out.println("삭제할 상품의 id를 입력해주세요");
+        int productId = scanner.next();
+        for (int i=0; i<array.size(); i++) {
+           JSONObject obj = (JSONObject) array.get(i);
+            if(obj.get("id")==productId) {
+               System.out.println(obj.get("productName") + " 상품이 제거되었습니다.");
             }
-            catch (IOException e) {
-               e.printStackTrace();
+            else {
+               System.out.println("해당 상품을 찾지 못했습니다.");
             }
-   
-}
+         }
+
+
+   }
