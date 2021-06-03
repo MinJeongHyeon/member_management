@@ -1,17 +1,18 @@
-package shopping_mall;
+package shop;
 
 public class Cart {
-	
-	public void input() {
-		
-	}
-	
-	public void output() {
-		
-	}
-	
-	public void delete() {
-		
-	}
 
+	public static void input() {
+		
+		
+	}
+	
+	public static void output() {
+
+		
+	}
+	
+	public static void delete() {
+		
+	}
 }

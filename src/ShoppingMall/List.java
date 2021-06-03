@@ -1,19 +1,26 @@
-package shopping_mall;
+package shop;
 
 public class List {
-	
-	public void input() {
-		
-	}
-	
-	public void output() {
-		
-	}
-	
-	public void delete() {
-		
-	}
-	
-	
 
+	public static void input() {
+		
+		
+	}
+	
+	public static void output() {
+
+		
+	}
+	
+	public static void delete() {
+		
+	}
+	
+	public static void edit() {
+		
+	}
+	
+	public static void search() {
+		
+	}
 }
